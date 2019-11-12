@@ -14,33 +14,37 @@ const initialState = [
 ]
 // create a function, for changing store, where first argument is initial state, second one is action
 // function issueTracker(state = [], action) {
-  function issueTracker(state = initialState, action) {
-  console.log(action);
+// reducer is a pure function, which takes two parameters: previous state and action and returns new state 
+  function issueTracker(state = initialState, action) {//it is called reducer and 
+    console.log(action);
   //will show two actions: 1. {type: "@@redux/INITf.8.0.v.d.j"} - action of redux initialization
   // and 2. {type: "ADD_ISSUE", record: "something"}
-  //state for change store: 
-  if (action.type === "ADD_ISSUE") {
+  //reducer takes previous (action.type === "ADD_ISSUE") {
     return [
       ...state, //spread adds value to array and returns new array and it's important, because we can't 
       //change store(it's immutable) and only can always create new 'cast' with new state of store
-      action.record,
-      action.name,
-      action.email,
-      action.content,
-      action.status
+      // action.record,
+      // action.name,
+      // action.email,
+      // action.content,
+      // action.status
+      action.userData
     ];
   }
 
   return state;
 }
 // initialize store and pass into issueTracker function as an argument
-const store = createStore(issueTracker); //it is called reducer
+const store = createStore(issueTracker, 
+                          window.__REDUX_DEVTOOLS_EXTENSION__ && 
+                          window.__REDUX_DEVTOOLS_EXTENSION__()); //the second 
+//argument is a devtools for chrome and the write means, if window__RDE not undefined, 
+//it will be used as a second argument
 //check if we are able to get store state (which initially is empty array)
-// console.log(store.getState());
+
 //subscribe on all changes in store by method subscribe
 store.subscribe(()=>{
   console.log('subscribe', store.getState());
-  // const list = document.querySelectorAll('.')
 })
 //for changing values in store use dispatch function (the only way for changing something in store)
 //field is type. for clearer understanding: dispatch is an event (action), and type is a type of the event

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { connect } from 'react-redux'; //decorator, it wraps App component and add two extra functions 
 import './App.css';
  import {
@@ -70,17 +69,14 @@ class App extends Component {
       </div>
   );
   }
-  
 }
-
-
 export default connect(
   state => ({
     testStore: state
   }),/*it mapps state from store to props of App component*/
   dispatch => ({}), /*helps to subscribe on actions and events in store*/
 )(App);
-{/*let addIssueBut;
+/*let addIssueBut;
 setTimeout(function() {
     addIssueBut = document.querySelectorAll('.addIssue')[0];       
 }, 2000);
@@ -96,7 +92,7 @@ console.log(addIssueBut);
     store.dispatch({ type: 'ADD_ISSUE', name: userName, email: email, content: content, status: status }); //dispatch needs input as an object, where the only necessary
 
   })
-}, 3000)*/}
+}, 3000)*/
 
 
 
