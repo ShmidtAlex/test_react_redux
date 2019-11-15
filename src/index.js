@@ -8,20 +8,21 @@ import { Provider } from 'react-redux';
 // import redux
 import { createStore } from 'redux';
 
+// здесь вместо initialState должен быть JSON с данными с сервера
 const initialState = [
   { user: 'user 1', email: 'example@example.com', content: 'content from first user' },
   { user: 'user 2', email: 'example@example.com', content: 'content from second user' }
 ]
 // create a function, for changing store, where first argument is initial state, second one is action
 // function issueTracker(state = [], action) {
-// reducer is a pure function, which takes two parameters: previous state and action and returns new state 
-  function issueTracker(state = initialState, action) {//it is called reducer and 
+  function issueTracker(state = initialState, action) { //it is called reducer and 
     console.log(action);
   //will show two actions: 1. {type: "@@redux/INITf.8.0.v.d.j"} - action of redux initialization
   // and 2. {type: "ADD_ISSUE", record: "something"}
-  //reducer takes previous (action.type === "ADD_ISSUE") {
+  //state for change store: 
+  if (action.type === "ADD_ISSUE") {
     return [
-      ...state, //spread adds value to array and returns new array and it's important, because we can't 
+      ...state, //spread added value to array and returns new array and it's important, because we can't 
       //change store(it's immutable) and only can always create new 'cast' with new state of store
       // action.record,
       // action.name,
@@ -30,8 +31,9 @@ const initialState = [
       // action.status
       action.userData
     ];
+  } else if (action.type === "REDACT_ISSUE") {
+    
   }
-
   return state;
 }
 // initialize store and pass into issueTracker function as an argument

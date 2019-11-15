@@ -25,6 +25,10 @@
   flex-direction: column;
   align-items: center;
 }
+.userspage_wrapper {
+  width: 95%;
+  padding: 10px;
+}
 nav {
   display: flex;
   flex-direction: row;
@@ -39,9 +43,46 @@ ul {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .issuesList {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+.listHead,
+.listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /*border: 1px solid black;*/
+}
+.list_name, .list_email, .list_content, .list_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  border: 1px solid black;
+  padding: 2px;
+  height: 40px;
+}
+.list_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listHead span {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+.list_content input {
+  margin: 0;
+  padding: 0;
 }
