@@ -40,7 +40,9 @@ class IssuesPannel extends Component {
             <button onClick={this.addIssue} className="addIssue">Add Issue</button>
             <ul className="issuesList">
               {this.props.testStore.map((item, index) => 
-                <li key={index}> user: { item.user}, email: { item.email }, content:  { item.content }</li>
+                <li key={index}> 
+                 user: { item.user}, email: { item.email }, content:  { item.content }
+                </li>
               )}
             </ul>
           </div>

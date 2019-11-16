@@ -19,7 +19,8 @@ const initialState = [
     console.log(action);
   //will show two actions: 1. {type: "@@redux/INITf.8.0.v.d.j"} - action of redux initialization
   // and 2. {type: "ADD_ISSUE", record: "something"}
-  //reducer takes previous (action.type === "ADD_ISSUE") {
+  //reducer takes previous 
+  if (action.type === "ADD_ISSUE") {
     return [
       ...state, //spread adds value to array and returns new array and it's important, because we can't 
       //change store(it's immutable) and only can always create new 'cast' with new state of store
@@ -31,7 +32,6 @@ const initialState = [
       action.userData
     ];
   }
-
   return state;
 }
 // initialize store and pass into issueTracker function as an argument
