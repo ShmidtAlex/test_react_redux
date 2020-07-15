@@ -1,5 +1,6 @@
 # It's a react app created according to some tutorial. It imitate fullstack project (doesn't have any database). The goal of this project was to explore react superficially.
 
+##It's an issue tracker. In the app you may add new issues/comments/from user. for testing functionality, use issuesPannel link
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
